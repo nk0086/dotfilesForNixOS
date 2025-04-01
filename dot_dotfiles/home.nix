@@ -2,6 +2,7 @@
   imports = [
     ./neovim.nix
     ./development.nix
+    ./git.nix
   ];
   home.username = "nixos";
   home.homeDirectory = "/home/nixos";
@@ -17,6 +18,9 @@
     ripgrep
     fzf
     zoxide #cd
+    nodejs
+    uv
+    gcc
   ];
   
   home.stateVersion = "24.11";

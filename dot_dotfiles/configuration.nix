@@ -14,12 +14,24 @@
     git 
     gh
     chezmoi
+    qdrant
+    python312Packages.qdrant-client
+    docker
+    docker-compose
   ];
+
   
-  wsl.enable = true;
-  wsl.defaultUser = "nixos";
+  wsl = {
+    enable = true;
+    defaultUser = "nixos";
+  };
   system.stateVersion = "24.11";
   users.users.nixos.shell = pkgs.zsh;
+  home-manager.backupFileExtension = "backup";
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 
   programs = {
     nix-ld.enable = true;
