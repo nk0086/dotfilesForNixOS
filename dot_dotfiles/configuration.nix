@@ -34,7 +34,10 @@
   };
 
   programs = {
-    nix-ld.enable = true;
+    nix-ld = {
+      enable = true;
+      package = pkgs.nix-ld-rs;
+    };
     git.enable = true;
     neovim = {
       enable = true;
@@ -53,9 +56,9 @@
         la = "eza --icons always --classify always --all ";
         ll = "eza --icons always --long --all --git ";
         tree = "eza --icons always --classify always --tree";
-	update = "cd ~/.dotfiles && sudo nixos-rebuild switch --flake .";
-	ch = "chezmoi";
-	r = "ranger";
+	      update = "cd ~/.dotfiles && sudo nixos-rebuild switch --flake .";
+	      ch = "chezmoi";
+	      r = "ranger";
       };
     };
     starship.enable = true;

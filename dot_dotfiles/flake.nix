@@ -29,10 +29,10 @@
             home-manager.users.nixos = import ./home.nix;
           }
 
-	  vscode-server.nixosModules.default
-	  ({config, pkgs, ... }: {
-	    services.vscode-server.enable = true;
-	  })
+	        vscode-server.nixosModules.default
+	        ({config, pkgs, ... }: {
+	          services.vscode-server.enable = true;
+	        })
         ];
       };
     }; 
